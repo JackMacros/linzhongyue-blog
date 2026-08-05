@@ -27,6 +27,32 @@
 - 每日 PV/UV 聚合、文章浏览量和管理操作日志
 - MySQL Flyway 迁移与旧博客文章迁移工具
 
+## 界面展示
+
+### 首页
+
+![博客首页](./docs/screenshots/home.png)
+
+### 博客
+
+![博客文章列表](./docs/screenshots/blog.png)
+
+### 专栏
+
+![博客专栏列表](./docs/screenshots/columns.png)
+
+### 关于我
+
+![关于我页面](./docs/screenshots/about.png)
+
+### 联系我
+
+![联系我页面](./docs/screenshots/contact.png)
+
+### 博客后台
+
+![博客管理后台仪表盘](./docs/screenshots/admin-dashboard.png)
+
 ## 本地开发
 
 ### 环境要求
