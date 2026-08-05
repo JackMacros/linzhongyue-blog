@@ -100,6 +100,18 @@
 | 图片存储 | 七牛云对象存储 |
 | 部署 | Docker Compose、Nginx、Let's Encrypt |
 
+## 数据库与演示账号
+
+推荐直接创建空数据库并启动后端，由 Flyway 自动完成表结构和示例站点数据初始化。所有版本化 SQL 位于 [`backend/src/main/resources/db/migration`](./backend/src/main/resources/db/migration)。
+
+仓库同时提供一份可独立导入的 [MySQL 8 完整演示快照](./docs/sql/linzhongyue_blog_demo.sql)，包含当前表结构、示例文章、标签、专栏、项目、经历、技能和访问统计。
+
+| 演示后台账号 | 演示密码 |
+|---|---|
+| `admin` | `admin123` |
+
+演示账号是公开信息，只能用于本地体验，严禁用于公网或生产环境。完整导入和启动步骤见 [`docs/sql/README.md`](./docs/sql/README.md)。
+
 ## 快速开始
 
 ### 环境要求

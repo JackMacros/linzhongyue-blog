@@ -54,6 +54,19 @@ mvn spring-boot:run
 
 Flyway 会自动创建数据库结构和示例站点内容。首次启动且管理员表为空时，需要通过 `BLOG_ADMIN_USERNAME` 和 `BLOG_ADMIN_PASSWORD` 创建唯一管理员。
 
+## 数据库脚本与演示账号
+
+版本化表结构和种子数据位于 [`src/main/resources/db/migration`](./src/main/resources/db/migration)，这是正常开发和生产环境的推荐初始化方式。
+
+项目另外提供 [`docs/sql/linzhongyue_blog_demo.sql`](../docs/sql/linzhongyue_blog_demo.sql) 完整快照，方便快速查看表结构或导入本地演示数据库。快照包含示例内容和演示管理员：
+
+```text
+用户名：admin
+密码：admin123
+```
+
+这是公开的本地演示账号，不得用于公网或生产环境。SQL 快照已包含完整结构，使用它时需要禁用 Flyway；详细步骤见 [`docs/sql/README.md`](../docs/sql/README.md)。
+
 ## 配置
 
 真实配置只能放在环境变量或已忽略的 `.env` 中。

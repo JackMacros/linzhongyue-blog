@@ -100,6 +100,18 @@ The two frontend applications are built independently and hosted by Nginx. The b
 | Image storage | Qiniu Cloud object storage |
 | Deployment | Docker Compose, Nginx, Let's Encrypt |
 
+## Database and Demo Account
+
+The recommended setup is to create an empty database and let Flyway initialize the schema and sample site content when the backend starts. All versioned SQL migrations live in [`backend/src/main/resources/db/migration`](./backend/src/main/resources/db/migration).
+
+The repository also provides a standalone [MySQL 8 demo snapshot](./docs/sql/linzhongyue_blog_demo.sql) containing the current schema, a sample article, tags, columns, projects, experience, skills, and visit statistics.
+
+| Demo admin username | Demo password |
+|---|---|
+| `admin` | `admin123` |
+
+These credentials are public and intended only for a local demo. Never use them on an internet-facing or production deployment. See [`docs/sql/README.md`](./docs/sql/README.md) for complete import and startup instructions.
+
 ## Quick Start
 
 ### Requirements
