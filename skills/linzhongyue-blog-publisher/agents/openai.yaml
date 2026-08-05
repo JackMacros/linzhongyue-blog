@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lin Zhongyue Blog Publisher"
+  short_description: "Write Markdown and safely publish it to Lin Zhongyue's blog"
+  default_prompt: "Use $linzhongyue-blog-publisher to draft a Markdown article and publish it to the Lin Zhongyue blog."

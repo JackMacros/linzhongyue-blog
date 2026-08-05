@@ -1,0 +1,2 @@
+ALTER TABLE blog_article
+    ADD COLUMN cover_url VARCHAR(1000) NOT NULL DEFAULT '';

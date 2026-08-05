@@ -1,0 +1,12 @@
+target/
+app/*.jar
+logs/
+*.log
+.env
+.env.*
+!.env.example
+config/application.yml
+application-local.yml
+migration-reports/
+.idea/
+*.iml

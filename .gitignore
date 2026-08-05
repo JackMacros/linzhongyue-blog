@@ -1,0 +1,83 @@
+# Environment variables and local configuration
+.env
+.env.*
+!**/.env.example
+!**/.env.sample
+backend/config/application.yml
+backend/application-local.yml
+**/application-local.yml
+**/application-*.local.yml
+
+# Credentials, certificates, and signing material
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.crt
+*.cer
+credentials.json
+secrets.json
+
+# Java / Maven
+backend/target/
+backend/app/*.jar
+backend/logs/
+backend/migration-reports/
+*.class
+hs_err_pid*
+
+# Node / Vite
+**/node_modules/
+**/dist/
+**/dist-ssr/
+**/.vite/
+**/.turbo/
+**/coverage/
+*.tsbuildinfo
+
+# Logs and runtime files
+logs/
+*.log
+*.log.*
+*.pid
+*.pid.lock
+*.out
+*.err
+
+# Database dumps and backups
+backups/
+*.dump
+*.sql.gz
+*.sql.zip
+*.bak
+*.backup
+
+# IDE and OS metadata
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.iml
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local agent/editor state
+.codex/
+.claude/
+
+# Generated distributable archives
+skills/*.zip
+
+# Temporary files
+.cache/
+.tmp/
+tmp/
+temp/
+*~

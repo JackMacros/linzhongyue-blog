@@ -1,0 +1,50 @@
+name: linzhongyue-blog
+
+services:
+  api:
+    image: eclipse-temurin:21-jre-jammy
+    container_name: linzhongyue-blog-api
+    restart: unless-stopped
+    init: true
+    working_dir: /opt/blog
+    command:
+      - java
+      - -XX:InitialRAMPercentage=25.0
+      - -XX:MaxRAMPercentage=70.0
+      - -XX:+UseG1GC
+      - -Duser.timezone=Asia/Shanghai
+      - -jar
+      - /opt/blog/app/app.jar
+      - --spring.config.location=file:/opt/blog/config/application.yml
+    env_file:
+      - ./.env
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - "10010:8080"
+    volumes:
+      - ./app:/opt/blog/app:ro
+      - ./config:/opt/blog/config:ro
+      - ./logs:/opt/blog/logs
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=128m
+    user: "1000:1000"
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 768m
+    cpus: 1.0
+    stop_grace_period: 30s
+    healthcheck:
+      test: ["CMD-SHELL", "timeout 3 bash -c '</dev/tcp/127.0.0.1/8080'"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
